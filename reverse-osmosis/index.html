@@ -574,7 +574,7 @@
         </svg>
         Palm Beach County Water Experts Since 2008
       </div>
-      <h1 class="hero-h1">Stop <span class="accent">Contaminated Water</span><br/>From Harming Your Family</h1>
+      <h1 class="hero-h1">Reverse Osmosis Water Filtration<br/>for <span class="accent">Palm Beach County</span></h1>
       <p class="hero-sub">Book a free in-home water test and get <strong>$500 off a reverse osmosis or whole-house filtration system</strong> — redeemable same day. South Florida's trusted water treatment specialists, serving Palm Beach County since 2008.</p>
       <div class="hero-bullets">
         <div class="hero-bullet"><span class="check-dot">✓</span>Remove 99%+ of PFAS, chlorine, lead &amp; heavy metals</div>
@@ -593,15 +593,9 @@
         <p class="form-sub">Book your free in-home water analysis and lock in your credit. Takes 30 seconds.</p>
 
         <form id="sws-form" novalidate>
-          <div class="form-row">
-            <div>
-              <label class="field-label" for="fn">First Name *</label>
-              <input class="field-input" type="text" id="fn" name="firstName" placeholder="John" required />
-            </div>
-            <div>
-              <label class="field-label" for="ln">Last Name</label>
-              <input class="field-input" type="text" id="ln" name="lastName" placeholder="Smith" />
-            </div>
+          <div class="form-group">
+            <label class="field-label" for="fn">First Name *</label>
+            <input class="field-input" type="text" id="fn" name="firstName" placeholder="John" required />
           </div>
           <div class="form-group">
             <label class="field-label" for="ph">Phone Number *</label>
@@ -611,29 +605,13 @@
             <label class="field-label" for="em">Email *</label>
             <input class="field-input" type="email" id="em" name="email" placeholder="john@email.com" required />
           </div>
-          <div class="form-group">
-            <label class="field-label" for="cz">City / Zip Code</label>
-            <input class="field-input" type="text" id="cz" name="cityZip" placeholder="Wellington / 33414" />
-          </div>
-          <div class="form-group">
-            <label class="field-label" for="wc">Biggest Water Concern</label>
-            <div class="select-wrap">
-              <select class="field-select" id="wc" name="waterConcern">
-                <option value="">What's bothering you most?</option>
-                <option value="Chlorine Taste Smell">Chlorine taste or smell</option>
-                <option value="PFAS Chemicals">PFAS / forever chemicals in water</option>
-                <option value="Lead Heavy Metals">Lead or heavy metals</option>
-                <option value="Iron Rust">Iron, rust, or brown water</option>
-                <option value="Sulfur Smell">Sulfur / rotten egg smell</option>
-                <option value="Not Sure">Not sure — I want a free water test</option>
-              </select>
-            </div>
-          </div>
+
+
 
           <p class="form-error" id="frm-err">Please fill in your name, phone, and email.</p>
 
           <button type="submit" class="btn-submit" id="frm-btn">
-            <span id="btn-label">Claim My $500 Credit →</span>
+            <span id="btn-label">Get My Free RO Water Quote →</span>
             <span class="spinner" id="btn-spin" style="display:none"></span>
           </button>
 
@@ -1011,11 +989,11 @@ document.getElementById('sws-form').addEventListener('submit', async function(e)
   e.preventDefault();
 
   var fn = document.getElementById('fn').value.trim();
-  var ln = document.getElementById('ln').value.trim();
+  var ln = '';
   var ph = document.getElementById('ph').value.trim();
   var em = document.getElementById('em').value.trim();
-  var cz = document.getElementById('cz').value.trim();
-  var wc = document.getElementById('wc').value;
+  var cz = '';
+  var wc = 'Reverse Osmosis';
 
   var errEl = document.getElementById('frm-err');
   if(!fn || !ph || !em){
