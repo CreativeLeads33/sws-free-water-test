@@ -18,6 +18,9 @@
   .btn-teal:hover { background:#158a7c; }
   .btn-teal:disabled { background:#94a3b8; cursor:not-allowed; }
   .review-card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:20px; }
+  @media (min-width: 769px) { .mobile-call-btn { display:none !important; } }
+  @media (max-width: 768px) { .mobile-call-btn { display:block !important; } }
+
 </style>
 </head>
 <body style="background:#fff;">
@@ -42,7 +45,7 @@
       <span class="badge">✓ Licensed &amp; Insured</span>
     </div>
     <h1 style="color:#fff;font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.15;margin-bottom:16px;">
-      Know What's Really<br>In Your Water
+      Get Your Free In-Home Water Test
     </h1>
     <p style="color:rgba(255,255,255,0.85);font-size:18px;line-height:1.6;margin-bottom:12px;">
       Get a free in-home water test from Palm Beach County's most trusted water treatment specialists. Our certified technician tests on-site and walks you through the results.
@@ -53,50 +56,36 @@
       <span style="color:rgba(255,255,255,0.75);">· 488 Five-Star Reviews</span>
     </div>
 
+    <!-- Mobile Tap-to-Call (shows above form on mobile) -->
+    <a href="tel:5613096270" onclick="fireConversion()"
+      style="display:block;background:#1A9B8C;color:#fff;padding:16px 32px;border-radius:8px;font-size:18px;font-weight:700;text-align:center;text-decoration:none;margin-bottom:16px;"
+      class="mobile-call-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="display:inline;vertical-align:middle;margin-right:8px;"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+      Call Now: (561) 309-6270
+    </a>
     <!-- Lead Form Card -->
     <div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,0.3);" id="form-card">
-      <h2 style="color:#0D2B5C;font-size:22px;font-weight:700;margin-bottom:4px;">Schedule Your Free Water Test</h2>
+      <h2 style="color:#0D2B5C;font-size:22px;font-weight:700;margin-bottom:4px;">Get Your Free Water Test</h2>
       <p style="color:#64748b;font-size:14px;margin-bottom:24px;">Takes less than 60 seconds. Same-day appointments available.</p>
 
       <form id="leadForm" onsubmit="submitForm(event)">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
-          <div>
-            <label style="display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px;">First Name *</label>
-            <input type="text" id="firstName" placeholder="John" required
-              style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;transition:all 0.2s;box-sizing:border-box;">
-          </div>
-          <div>
-            <label style="display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px;">Last Name</label>
-            <input type="text" id="lastName" placeholder="Smith"
-              style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;transition:all 0.2s;box-sizing:border-box;">
-          </div>
+        <div style="margin-bottom:12px;">
+          <label style="display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px;">First Name *</label>
+          <input type="text" id="firstName" placeholder="John" required
+            style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;transition:all 0.2s;box-sizing:border-box;">
         </div>
         <div style="margin-bottom:12px;">
           <label style="display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px;">Phone Number *</label>
           <input type="tel" id="phone" placeholder="(561) 555-0100" required
             style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;transition:all 0.2s;box-sizing:border-box;">
         </div>
-        <div style="margin-bottom:12px;">
+        <div style="margin-bottom:24px;">
           <label style="display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px;">Email Address *</label>
           <input type="email" id="email" placeholder="john@email.com" required
             style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;transition:all 0.2s;box-sizing:border-box;">
         </div>
-        <div style="margin-bottom:12px;">
-          <label style="display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px;">City or Zip Code</label>
-          <input type="text" id="cityZip" placeholder="Wellington, FL or 33414"
-            style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;transition:all 0.2s;box-sizing:border-box;">
-        </div>
-        <div style="margin-bottom:24px;">
-          <label style="display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px;">Biggest Water Problem?</label>
-          <select id="waterConcern" style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;transition:all 0.2s;background:#fff;box-sizing:border-box;">
-            <option value="">What's your biggest water problem?</option>
-            <option value="Hard Water">Hard Water (scale, dry skin, spots)</option>
-            <option value="Bad Taste or Smell">Bad Taste or Smell (sulfur / rotten egg)</option>
-            <option value="Well Water Issues">Well Water (iron, sulfur, discoloration)</option>
-            <option value="Chlorine & Chemicals">Chlorine &amp; Chemicals</option>
-            <option value="Not Sure">Not Sure — I want a free test</option>
-          </select>
-        </div>
+
+
         <div id="formError" style="display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:12px;margin-bottom:16px;color:#dc2626;font-size:14px;"></div>
         <button type="submit" class="btn-teal" id="submitBtn">
           Book My Free Water Test →
@@ -315,11 +304,11 @@ async function submitForm(e) {
   try {
     const payload = {
       firstName,
-      lastName: document.getElementById('lastName').value.trim(),
+      lastName: '',
       phone,
       email,
-      cityZip: document.getElementById('cityZip').value.trim(),
-      waterConcern: document.getElementById('waterConcern').value || 'Not Sure',
+      cityZip: '',
+      waterConcern: 'Free Water Test',
     };
 
     await fetch('https://veracious-chipmunk-999.convex.site/api/submitGoogleAdsLead', {
@@ -364,3 +353,4 @@ async function submitForm(e) {
 <script async src="//s.ksrndkehqnwntyxlhgto.com/160893.js"></script>
 </body>
 </html>
+
