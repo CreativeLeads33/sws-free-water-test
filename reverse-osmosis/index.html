@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-63FPD4PHQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-63FPD4PHQ5');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reverse Osmosis &amp; Water Filtration Palm Beach County | Simple Water Service</title>
@@ -605,12 +613,12 @@
           </div>
           <div class="form-group">
             <label class="field-label" for="em">Email *</label>
-            <input class="field-input" type="email" id="em" name="email" placeholder="john@email.com" required />
+            <input class="field-input" type="email" id="em" name="email" placeholder="john@email.com (optional)" />
           </div>
 
 
 
-          <p class="form-error" id="frm-err">Please fill in your name, phone, and email.</p>
+          <p class="form-error" id="frm-err">Please fill in your name and phone number.</p>
 
           <button type="submit" class="btn-submit" id="frm-btn">
             <span id="btn-label">Get My Free RO Water Quote →</span>
@@ -998,7 +1006,7 @@ document.getElementById('sws-form').addEventListener('submit', async function(e)
   var wc = 'Reverse Osmosis';
 
   var errEl = document.getElementById('frm-err');
-  if(!fn || !ph || !em){
+  if(!fn || !ph){
     errEl.style.display='block';
     return;
   }
@@ -1055,6 +1063,7 @@ document.getElementById('sws-form').addEventListener('submit', async function(e)
         send_to: 'AW-10832213635/wfdtCOra950cEIPtma0o',
         value: 1.0, currency: 'USD'
       });
+      gtag('event', 'generate_lead', {currency:'USD', value:1.0});
     }
 
     // Meta Pixel — fire Lead event on form submit
