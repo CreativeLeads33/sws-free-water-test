@@ -370,11 +370,13 @@ async function submitForm(e) {
   btn.disabled = true;
   btn.textContent = 'Submitting...';
   try {
-    await fetch('https://veracious-chipmunk-999.convex.site/api/submitGoogleAdsLead', {
+    const resp = await fetch('https://veracious-chipmunk-999.convex.site/api/submitGoogleAdsLead', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({firstName,lastName:'',phone,email:'',cityZip:'',waterConcern:'Free Water Test',source:'free-water-test-lander'})
+      body:JSON.stringify({firstName,lastName:'',phone,waterConcern:'Free Water Test',source:'free-water-test-lander'})
     });
+    const result = await resp.json();
+    if (!result.success) throw new Error(result.error || 'Submission failed');
     document.getElementById('leadForm').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
     fireConversion();
