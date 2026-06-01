@@ -373,7 +373,7 @@ async function submitForm(e) {
     const resp = await fetch('https://veracious-chipmunk-999.convex.site/api/submitGoogleAdsLead', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({firstName,lastName:'',phone,waterConcern:'Free Water Test',source:'free-water-test-lander'})
+      body:JSON.stringify({firstName,lastName:'',phone,email:'lead.'+phone.replace(/\D/g,'')+'@noemail.simplewaterservice.com',waterConcern:'Free Water Test',source:'free-water-test-lander'})
     });
     const result = await resp.json();
     if (!result.success) throw new Error(result.error || 'Submission failed');
