@@ -65,7 +65,7 @@
 <header style="background:#0D2B5C;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,0.2)">
   <div style="max-width:1100px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;">
     <img src="../free-water-test/sws-logo-white.png" alt="Simple Water Service" width="200" height="52" style="height:44px;width:auto;">
-    <a href="tel:5613096270" style="background:#1A9B8C;color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:8px;" onclick="fireConversion()">
+    <a href="tel:5613096270" style="background:#1A9B8C;color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:8px;" onclick="fireCallConversion()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
       (561) 309-6270
     </a>
@@ -96,7 +96,7 @@
     </div>
 
     <!-- Mobile tap-to-call -->
-    <a href="tel:5613096270" onclick="fireConversion()" class="mobile-only"
+    <a href="tel:5613096270" onclick="fireCallConversion()" class="mobile-only"
       style="display:block;background:#1A9B8C;color:#fff;padding:16px 32px;border-radius:8px;font-size:18px;font-weight:700;text-align:center;text-decoration:none;margin-bottom:16px;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="display:inline;vertical-align:middle;margin-right:8px;"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
       Call Now: (561) 309-6270
@@ -332,7 +332,7 @@
       style="background:#1A9B8C;color:#fff;padding:16px 36px;border-radius:8px;font-size:18px;font-weight:700;text-decoration:none;display:inline-block;">
       Book My Free Water Test
     </a>
-    <a href="tel:5613096270" onclick="fireConversion()"
+    <a href="tel:5613096270" onclick="fireCallConversion()"
       style="background:rgba(255,255,255,0.15);color:#fff;padding:16px 36px;border-radius:8px;font-size:18px;font-weight:700;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,0.4);">
       Call (561) 309-6270
     </a>
@@ -346,11 +346,21 @@
 
 <script>
 function fireConversion() {
+  // Form submission conversion — fires only on form submit
   if (typeof gtag !== 'undefined') {
     gtag('event', 'conversion', {send_to:'AW-10832213635/wfdtCOra950cEIPtma0o',value:1.0,currency:'USD'});
     gtag('event', 'generate_lead', {currency:'USD',value:1.0});
   }
   if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
+}
+
+function fireCallConversion() {
+  // Call button click — separate from form conversion
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', {send_to:'AW-10832213635/O6jjCMqA5PEcEIPtma0o'});
+    gtag('event', 'phone_call_click', {currency:'USD',value:1.0});
+  }
+  if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); }
 }
 
 function toggleFaq(btn) {
