@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're All Set! | Simple Water Service</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(160deg, #EAF6F5 0%, #F7FBFE 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .logo { height: 52px; margin-bottom: 32px; object-fit: contain; }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(13,43,92,0.10);
+      text-align: center;
+    }
+    .check {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: #1A9B8C;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+    }
+    h1 {
+      font-size: 28px; font-weight: 800;
+      color: #0D2B5C; margin-bottom: 12px; line-height: 1.2;
+    }
+    p { font-size: 16px; color: #4B5563; margin-bottom: 32px; line-height: 1.6; }
+    .steps {
+      background: #F0FAF9; border-radius: 12px;
+      padding: 20px 24px; margin-bottom: 32px; text-align: left;
+    }
+    .steps-label {
+      font-size: 13px; font-weight: 700; color: #1A9B8C;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;
+    }
+    .step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: #1A9B8C; color: white;
+      font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .step span { font-size: 14px; color: #374151; line-height: 1.5; }
+    .sub { font-size: 14px; color: #6B7280; margin-bottom: 12px; }
+    .cta {
+      display: inline-block; background: #0D2B5C; color: white;
+      font-weight: 700; font-size: 16px; padding: 14px 32px;
+      border-radius: 10px; text-decoration: none;
+    }
+    footer { font-size: 13px; color: #9CA3AF; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <img src="/sws-logo-official.png" alt="Simple Water Service" class="logo" />
+  <div class="card">
+    <div class="check">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M9 18.5L15.5 25L27 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>You're All Set!</h1>
+    <p>Thanks for requesting your free water test. Our team will reach out within <strong>24 hours</strong> to schedule your on-site visit. We serve all of Palm Beach County and the Treasure Coast.</p>
+    <div class="steps">
+      <div class="steps-label">What happens next</div>
+      <div class="step"><div class="step-num">1</div><span>We'll call or text you to confirm a time</span></div>
+      <div class="step"><div class="step-num">2</div><span>A tech comes to your home — no cost, no pressure</span></div>
+      <div class="step"><div class="step-num">3</div><span>We test on-site and walk you through the results</span></div>
+    </div>
+    <p class="sub">Need to reach us sooner?</p>
+    <a href="tel:5613096270" class="cta">Call (561) 309-6270</a>
+  </div>
+  <footer>© 2026 Simple Water Service · Palm Beach County, FL</footer>
+</body>
+</html>
