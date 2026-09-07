@@ -6,6 +6,28 @@
 <title>Free Water Test — Palm Beach County | Simple Water Service</title>
 <meta name="description" content="Get a free in-home water test in Palm Beach County. Our certified specialist tests on-site and explains results. No obligation. Call (561) 309-6270.">
 
+<!-- OpenAI / ChatGPT Ads Measurement Pixel -->
+<script>
+  (function (w, d, s, u) {
+    if (w.oaiq) return;
+    var q = function () { q.q.push(arguments); };
+    q.q = [];
+    w.oaiq = q;
+    var js = d.createElement(s);
+    js.async = true;
+    js.src = u;
+    var f = d.getElementsByTagName(s)[0];
+    f.parentNode.insertBefore(js, f);
+  })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+
+  oaiq("init", { pixelId: "A5eKVfBeDveALvsxNjJxHZ", debug: true });
+
+  oaiq("measure", "page_viewed", {
+    type: "contents",
+    contents: [{ id: "free-water-test", name: "Free Water Test Lander", content_type: "page" }]
+  });
+</script>
+
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-63FPD4PHQ5"></script>
 <script>
@@ -357,6 +379,9 @@ function fireConversion() {
     gtag('event', 'generate_lead', {currency:'USD',value:1.0});
   }
   if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
+  if (typeof oaiq !== 'undefined') {
+    oaiq('measure', 'lead_created', { type: 'customer_action' });
+  }
 }
 
 function fireCallConversion() {
@@ -366,6 +391,9 @@ function fireCallConversion() {
     gtag('event', 'phone_call_click', {currency:'USD',value:1.0});
   }
   if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); }
+  if (typeof oaiq !== 'undefined') {
+    oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: 'phone_call_click' });
+  }
 }
 
 function toggleFaq(btn) {
