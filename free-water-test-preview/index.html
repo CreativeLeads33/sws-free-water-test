@@ -460,6 +460,10 @@ function fireCallConversion() {
   }
   if (typeof fbq !== 'undefined') { fbq('track', 'Contact'); }
   if (typeof oaiq !== 'undefined') {
+    // lead_created = "submits a lead form OR requests contact" — a tap-to-call is a
+    // contact request, and it must be a STANDARD event to be an oCPC optimization goal.
+    oaiq('measure', 'lead_created', { type: 'customer_action' });
+    // custom event kept for reporting segmentation only (calls vs form fills)
     oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: 'phone_call_click' });
   }
 }
